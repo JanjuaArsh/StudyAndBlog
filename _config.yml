@@ -32,6 +32,7 @@ github_username:  janjuaArsh
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -52,3 +53,12 @@ exclude:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Navigation
+urls:
+    - text: Home
+      url: /
+
+# pagination of posts
+paginate: 4
+paginate_path: "./page:num/"
