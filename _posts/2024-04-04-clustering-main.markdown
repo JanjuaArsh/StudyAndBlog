@@ -9,7 +9,7 @@ date:   2024-04-04
         {% for clusteringtopics in ordered_pages %}
         <div class="">
             <h1>
-              <a href="{{clusteringtopics.url}}" class ="no_text_decoration">
+              <a href="{{site.baseurl}}{{clusteringtopics.url}}" class ="no_text_decoration">
               {{ clusteringtopics.title }}</a>
             </h1>
         </div>
