@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="sidenav">
+    {% assign ordered_pages = site.clustering | sort:"order" %}
+    {% for clusteringtopics in ordered_pages %}
+    <div class="">
+        <a href="{{clusteringtopics.url}}" class ="no_text_decoration">
+        {{ clusteringtopics.title }}</a>
+    </div>
+    {% endfor %}
+</div>
+
+{{ content }}

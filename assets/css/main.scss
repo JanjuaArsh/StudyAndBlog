@@ -3,8 +3,14 @@
 body 
 {
   margin:0;
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
   background-color: #3f3d3d;
+}
+
+.no_text_decoration
+{
+  text-decoration: none; 
+  color: #f2f2f2;
 }
 
 .navbar_title
@@ -38,7 +44,8 @@ body
 
 .main {
   padding: 5px;
-  margin-top: 90px;
+  margin-top: 78px;
+  margin-left: 160px;
 }
 
 .blog_post {
@@ -51,6 +58,17 @@ body
 
 .container_copy {
   padding: 2rem 2rem 2rem 2rem;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 

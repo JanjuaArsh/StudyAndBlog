@@ -1,16 +1,16 @@
 ---
-layout: default
+layout: home
 title:  "Clustering with Python"
 date:   2024-04-04
-permalink: /Clustering/
 ---
 
 <div class="row">
-        {% for clusteringtopics in site.clustering %}
+        {% assign ordered_pages = site.clustering | sort:"order" %}
+        {% for clusteringtopics in ordered_pages %}
         <div class="">
             <h1>
-              <a href="{{clustering.url}}">
-              {{ clusteringtopics.url }}</a>
+              <a href="{{clusteringtopics.url}}" class ="no_text_decoration">
+              {{ clusteringtopics.title }}</a>
             </h1>
         </div>
         {% endfor %}
