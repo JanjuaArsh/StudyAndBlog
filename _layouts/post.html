@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="sidenav">
-    {% assign ordered_pages = site.clustering | sort:"order" %}
+    {% assign ordered_pages = site.networking | sort:"order" %}
     {% for clusteringtopics in ordered_pages %}
     <div class="">
         <a href="{{site.baseurl}}{{clusteringtopics.url}}" class ="no_text_decoration">

@@ -68,3 +68,5 @@ paginate_path: "./page:num/"
 collections:
     clustering:
        output: true
+    networking:
+       output: true
