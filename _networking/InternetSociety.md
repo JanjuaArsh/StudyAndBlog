@@ -19,3 +19,6 @@ IANA, is a department of ICANN, it is responsible for distributing IP addresses 
 
 ## Advanced Research Projects Agency Network (ARPANET)
  Network that layed the foundation to the present internet.
+
+## Internet Engineering Task Force (IETF)
+It is a body that defines standard operating internet protocols.
