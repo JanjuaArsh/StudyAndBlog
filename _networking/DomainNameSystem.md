@@ -34,10 +34,40 @@ DNS message consists of a header, followed by the sections Question, Answer, Aut
 - The DNS messages are usually transported using UDP but in some cases messages are exchanged over TCP.
 - maximim size of the payload for DNS messages of 512 bytes.
 - Client sends query -> Server sends response —> (optional) Fallback to TCP [incase responce cannot be fitted in a single DNS message]
-### Record types
-- A : maps domain to a IPV4
-- AAAA : maps domain to a IPV6
-- CNAME : specifies an alias for a name.
 
+### Record types
+- A : maps domain to a IPV4 (A stands for address)
+- AAAA : maps domain to a IPV6( quad a)
+- CNAME : specifies an alias for a name.( canonical name)
+- NS : specifies the the name of a authorative name server for a domain.
+- MX : mail exchanger record points to the server to which the email needs to be delivdered for the given domain.
+- SOA : Start of authority record stores the administrative information about a dns zone.
+- SRV : servive record points to a service.
+- PTR : pointer record resolves ip to domain names.
 ### DNS zone
--
+-Data for domains is organised into zones (zone files).
+
+### Domain name servers
+Two server roles:
+- authoriative name server
+- dns resolver or the caching name server.
+
+### Resolver
+- Most OSes have a built in stub resolver. These cannot perform resurrsion, they send the query to the DNS resolvers.
+
+>> stub Resolver(os) -> recursive resolver -> root name server -> recursive resolver -> TLD authoritative servers -> so on.
+
+apart from local resolvers there are remote resolvers like the Google Public DNS - global DNS resolution service operating on 8.8.8.8
+
+###  Authoritative name servers
+Zone files are distributed among several Authoritative name servers.
+
+## measuring the DNS
+>> passive measurements : " in passive measurements, DNS traffic
+is collected at one or more measurement points and observes
+traffic that is the result of DNS queries by real end users. "
+>> active measurements : an active measurement precisely controls which queries
+are executed and collects results for these.
+
+#### Referance paper:
+Addressing the challenges of modern DNS a comprehensive tutorial - Olivier van der Toorn
