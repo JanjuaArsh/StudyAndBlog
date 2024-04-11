@@ -69,5 +69,55 @@ traffic that is the result of DNS queries by real end users. "
 >> active measurements : an active measurement precisely controls which queries
 are executed and collects results for these.
 
+## Dns message
+- header 
+- question
+- answer
+- authority
+- additional
+
+## DNS -over-Transport Layer Security (TLS)
+it was the first protocol to be  standardised by the ITEF. "It uses port 853 instead of
+port 53 and it enables clients to set up long-lived TLS sessions
+to resolvers and then send multiple DNS queries over that encrypted connection (Opportunistic DoT)."
+
+## DNS -over-HTTPS
+directly make doh queries using browser instead of using the  os stub resolver.
+
+## QNAME minimization
+When the resolver sends the query to the root server it sends the entire
+query name. That means that every authoritative server in the recursion
+path (and any eavesdroppers on that part of the network) can see
+the full set of query names that the clients of each resolver send,
+unnecessarily leaking data. To address this a reccursive resolution method QNAME minimization was specified where the
+resolvers ask for just the part of the query name they actually
+need for that resolution step.
+ 
+## DNSSEC - DNS security
+- DNSSEC adds extra data to DNS messages in the form of digital signatures.
+- DNSSEC relies on the so-called Extension Mechanisms for DNS, know as ‘‘EDNS0’’
+-The EDNS0 specification adds a way for DNS clients and servers to signal to each other that they have additional capabilities. This is done by including a pseudo resource record in the additional section of DNS queries and responses, the so-called OPT resource record.
+-DNSSEC signing is performed by the owner of a domain, and is done at the zone level.
+-  DNSSEC is designed to establish a chain of trust between parent and child zones. This chain of trust extends all the way from the root of the DNS down to an individually signed record. The chain of trust is established by creating a reference in the parent to a public key in the signed zone. This is done using the DS record type. The parent zone contains one or more DS records, that each reference a public key in the child zone that is a so-called secure entry point.
+
+## Nsec - next secure
+In the DNS, name servers return a non-existent
+domain (NXDOMAIN) response if a record does not exist, but how
+can we trust that this is the case? DNSSEC also addresses this
+problem through a mechanism called authenticated denial of existence. NSEC records are used for this purpose.
+## Attacks on DNS
+
+### domain shadowing
+When an attacker adds a subdomain under an existing domain.
+
+### domain registration hijack
+An attacker compromising an account of a registration provider (Registry, Registrar,
+or Reseller), for instance by using usernames and passwords
+obtained from other compromised sites.
+
+### zone poisoning
+an attack on the zone
+file stored in a name server rather than on the registration system. 
+
 #### Referance paper:
 Addressing the challenges of modern DNS a comprehensive tutorial - Olivier van der Toorn
