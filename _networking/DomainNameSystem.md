@@ -119,5 +119,36 @@ obtained from other compromised sites.
 an attack on the zone
 file stored in a name server rather than on the registration system. 
 
+### domain squatting
+The practice of registering domains which closely resemble
+well-known domains.
+>> The DNS facilitates cybersquatting attacks, because registering
+domains which closely resemble other domains is not prohibited.
+- Typosquatting
+- Bitsquatting
+- Combosquatting
+- Homophone-Based squatting _ audibally similar
+- Homograph-Based squatting _ visually similar
+-  IDN Homograph-Based Squatting (renders to yout.ube[.]com) _ use unicode characters in place to acsii and are sometimes impossible to distinguish
+
+## Distribute the zone
+- Zones are distributed in-band using the
+DNS protocol and out of band using other Internet protocols or
+non-standardized APIs and user interfaces.
+-Traditionally there
+exist two ways to distribute a zone to other name servers inband: Authoritative Transfer (AXFR) and Incremental Transfer
+(IXFR)
+-With AXFRs it is necessary to transfer the whole
+zone, whereas IXFRs transfer only the changes since the last
+transfer.
+- Both transfers are initiated by the server that wants to
+fetch the latest version of the zone, the so called secondary.
+- NOTIFY announcements are DNS queries
+that include the SOA record of the updated zone, allowing a
+secondary to determine if it indeed needs to fetch an update
+-Often, zone transfers should be limited to trusted name servers
+only. Therefore, primary and secondary name servers can share
+a secret key used for mutual authentication using the TSIG protocol
+
 #### Referance paper:
 Addressing the challenges of modern DNS a comprehensive tutorial - Olivier van der Toorn
