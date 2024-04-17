@@ -6,7 +6,7 @@ layout: default
     {% assign ordered_pages = site.networking | sort:"order" %}
     {% for clusteringtopics in ordered_pages %}
     <div class="">
-        <a href="{{site.baseurl}}{{clusteringtopics.url}}" class ="no_text_decoration">
+        <a href="{{clusteringtopics.url}}" class ="no_text_decoration">
         {{ clusteringtopics.title }}</a>
     </div>
     {% endfor %}

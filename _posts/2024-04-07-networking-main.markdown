@@ -9,7 +9,7 @@ date:   2024-04-07
         {% for topics in ordered_pages %}
         <div class="">
             <h1>
-              <a href="{{site.baseurl}}{{topics.url}}" class ="no_text_decoration">
+              <a href="{{topics.url}}" class ="no_text_decoration">
               {{ topics.title }}</a>
             </h1>
         </div>
