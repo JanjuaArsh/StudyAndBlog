@@ -150,5 +150,16 @@ secondary to determine if it indeed needs to fetch an update
 only. Therefore, primary and secondary name servers can share
 a secret key used for mutual authentication using the TSIG protocol
 
+## Closed Caching DNS Resolver:
+In a closed caching DNS resolver, the resolver only caches DNS records for the domains requested by its clients.
+It does not cache DNS records for domains that it has not been queried for.
+This approach ensures that the cache is only populated with records that are actively being used, reducing the chances of cache pollution with stale or unnecessary records.
+Closed caching resolvers are often used in enterprise environments where control over DNS resolution and caching is crucial for security and performance reasons.
+## Open Caching DNS Resolver:
+In contrast, an open caching DNS resolver caches DNS records for any domain that it resolves, regardless of whether the records were requested by its clients or not.
+This approach aims to improve overall DNS resolution performance by pre-populating the cache with a broader set of records.
+However, it can lead to cache pollution with records that may not be frequently accessed, potentially reducing the effectiveness of the cache.
+Open caching resolvers are commonly used in public DNS resolver services provided by ISPs or third-party DNS providers.
+
 #### Referance paper:
 Addressing the challenges of modern DNS a comprehensive tutorial - Olivier van der Toorn
